@@ -61,16 +61,28 @@ def _parse_json(raw: str) -> dict:
         return json.loads(_sanitize_json_strings(raw))
 
 
-def _call_llm(prompt: str, max_retries: int = 5) -> str:
+def _call_llm(prompt: str, max_retries: int = 5, log_cb=None, stage: str = "") -> str:
     delay = 30
     for attempt in range(max_retries):
         try:
             response = client.messages.create(
                 model=MODEL,
-                max_tokens=8192,
+                max_tokens=16000,
+                thinking={"type": "enabled", "budget_tokens": 8000},
                 messages=[{"role": "user", "content": prompt}],
             )
-            raw = response.content[0].text.strip()
+            raw = ""
+            thinking_text = ""
+            for block in response.content:
+                if block.type == "thinking":
+                    thinking_text = block.thinking
+                elif block.type == "text":
+                    raw = block.text
+
+            if log_cb and thinking_text:
+                log_cb("thinking", stage, thinking_text)
+
+            raw = raw.strip()
             raw = re.sub(r"^```(?:json)?", "", raw).strip()
             raw = re.sub(r"```$", "", raw).strip()
             return raw
@@ -109,7 +121,7 @@ def _collect_cells(plan: dict) -> tuple[list[dict], dict]:
 
 # ─── Phase 2: Assemble with LLM ───────────────────────────────────────────────
 
-def _assemble_with_llm(cells: list[dict], intake: dict) -> dict:
+def _assemble_with_llm(cells: list[dict], intake: dict, log_cb=None) -> dict:
     """
     LLM pass: dedup imports, normalize variable names, inject placeholders.
     Returns { imports: str, cells: [{ step_id, source, provenance }] }.
@@ -164,7 +176,7 @@ Rules:
 - Preserve the step_id order.
 - Respond with valid JSON only — no markdown fences, no explanation."""
 
-    return _parse_json(_call_llm(prompt))
+    return _parse_json(_call_llm(prompt, log_cb=log_cb, stage="Assemble Notebook"))
 
 
 # ─── Phase 3: Wrap ────────────────────────────────────────────────────────────
@@ -220,7 +232,7 @@ def _build_notebook_cells(plan: dict, assembled: dict) -> list[dict]:
 
 # ─── Main entry point ─────────────────────────────────────────────────────────
 
-def assemble_notebook(plan: dict) -> list[dict]:
+def assemble_notebook(plan: dict, log_cb=None) -> list[dict]:
     """
     Full coder pipeline:
       1. Collect — flatten selected_cells from all steps
@@ -229,11 +241,14 @@ def assemble_notebook(plan: dict) -> list[dict]:
     Returns list of notebook cells ready for Convex.
     """
     print("[coder] Collecting cells from enriched plan...")
+    if log_cb: log_cb("progress", "Collecting cells from plan...")
     cells, intake = _collect_cells(plan)
     print(f"[coder] {len(cells)} source cells collected across {len(plan.get('steps', []))} steps")
+    if log_cb: log_cb("progress", f"{len(cells)} source cells across {len(plan.get('steps', []))} steps")
 
     print("[coder] Assembling with LLM...")
-    assembled = _assemble_with_llm(cells, intake)
+    if log_cb: log_cb("progress", "Assembling notebook with LLM...")
+    assembled = _assemble_with_llm(cells, intake, log_cb=log_cb)
     print(f"[coder] {len(assembled.get('cells', []))} assembled cells returned")
 
     print("[coder] Building notebook cell list...")

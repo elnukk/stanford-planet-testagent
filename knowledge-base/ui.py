@@ -122,47 +122,69 @@ with tab_run:
             st.subheader("Intake JSON sent to agent")
             st.json(intake)
 
-            with st.spinner("Running planner + coder (this takes ~30–90 s)..."):
-                try:
-                    from agent.planner import plan_workflow
-                    from agent.coder import assemble_notebook
+            from agent.planner import plan_workflow
+            from agent.coder import assemble_notebook
 
-                    plan = plan_workflow(intake)
-                    cells = assemble_notebook(plan)
+            log_entries = []
 
-                    # Save to history
-                    save_to_history({
-                        "timestamp": datetime.now().isoformat(timespec="seconds"),
-                        "intake": intake,
-                        "workflow_title": plan.get("workflow_title", ""),
-                        "step_count": len(plan.get("steps", [])),
-                        "cell_count": len(cells),
-                    })
+            def _make_log_cb(placeholder):
+                def log_cb(kind: str, stage: str, content: str = ""):
+                    log_entries.append((kind, stage, content))
+                    with placeholder.container():
+                        for k, s, c in log_entries:
+                            if k == "progress":
+                                st.caption(f"• {s}")
+                            elif k == "thinking":
+                                with st.expander(f"🧠 {s}", expanded=False):
+                                    preview = c[:4000] + ("\n\n*(truncated)*" if len(c) > 4000 else "")
+                                    st.markdown(preview)
+                return log_cb
 
-                    st.success(f"Done — {len(cells)} cells generated for: **{plan.get('workflow_title', '')}**")
+            try:
+                with st.status("Running planner + coder...", expanded=True) as run_status:
+                    log_placeholder = st.empty()
+                    log_cb = _make_log_cb(log_placeholder)
 
-                    st.divider()
-                    st.subheader("Output: Notebook Cells (copy-paste ready)")
+                    plan = plan_workflow(intake, log_cb=log_cb)
+                    cells = assemble_notebook(plan, log_cb=log_cb)
 
-                    # Show cells as code blocks
-                    for i, cell in enumerate(cells):
-                        cell_type = cell.get("cell_type", "code")
-                        source = cell.get("source", "")
-                        if isinstance(source, list):
-                            source = "".join(source)
+                    run_status.update(
+                        label=f"Done — {len(cells)} cells: {plan.get('workflow_title', '')}",
+                        state="complete",
+                        expanded=False,
+                    )
 
-                        label = f"Cell {i + 1} [{cell_type}]"
-                        with st.expander(label, expanded=(i < 3)):
-                            lang = "python" if cell_type == "code" else "markdown"
-                            st.code(source, language=lang)
+                save_to_history({
+                    "timestamp": datetime.now().isoformat(timespec="seconds"),
+                    "intake": intake,
+                    "workflow_title": plan.get("workflow_title", ""),
+                    "step_count": len(plan.get("steps", [])),
+                    "cell_count": len(cells),
+                })
 
-                    st.divider()
-                    st.subheader("Full cells JSON")
-                    st.code(json.dumps(cells, indent=2), language="json")
+                st.success(f"Done — {len(cells)} cells generated for: **{plan.get('workflow_title', '')}**")
 
-                except Exception as exc:
-                    st.error(f"Agent error: {exc}")
-                    st.exception(exc)
+                st.divider()
+                st.subheader("Output: Notebook Cells (copy-paste ready)")
+
+                for i, cell in enumerate(cells):
+                    cell_type = cell.get("cell_type", "code")
+                    source = cell.get("source", "")
+                    if isinstance(source, list):
+                        source = "".join(source)
+
+                    label = f"Cell {i + 1} [{cell_type}]"
+                    with st.expander(label, expanded=(i < 3)):
+                        lang = "python" if cell_type == "code" else "markdown"
+                        st.code(source, language=lang)
+
+                st.divider()
+                st.subheader("Full cells JSON")
+                st.code(json.dumps(cells, indent=2), language="json")
+
+            except Exception as exc:
+                st.error(f"Agent error: {exc}")
+                st.exception(exc)
 
 
 # ── Tab 2: History ────────────────────────────────────────────────────────────
