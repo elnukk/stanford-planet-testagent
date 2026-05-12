@@ -1,0 +1,1021 @@
+{
+  "01_checking_available_feeds_and_subscriptions.ipynb": {
+    "use_case": "Analytics Api",
+    "planet_product": "",
+    "apis_used": [
+      "Analytics API"
+    ],
+    "description": "Demonstrates how to describe available Analytics Feeds and Subscriptions using the Planet Analytics API.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/analytics_api/quickstart/01_checking_available_feeds_and_subscriptions.ipynb"
+  },
+  "01_getting_started_with_the_planet_analytics_api.ipynb": {
+    "use_case": "Analytics Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Analytics API"
+    ],
+    "description": "Demonstrates how to authenticate with the Planet Analytics API, understand its Feeds and Subscriptions concepts, and programmatically retrieve data from their respective endpoints using the Python `Requests` library.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/analytics_api/user-guide/01_getting_started_with_the_planet_analytics_api.ipynb"
+  },
+  "01_ship_detector.ipynb": {
+    "use_case": "Ship Detector",
+    "planet_product": "",
+    "apis_used": [],
+    "description": "Shows how to detect, count, and geolocate ships in satellite images using scikit-image for object segmentation and gdal for coordinate transformation.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/ship_detector/01_ship_detector.ipynb"
+  },
+  "02_analytic_feeds_results.ipynb": {
+    "use_case": "Analytics Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API",
+      "Basemaps API",
+      "Analytics API",
+      "Tiles API"
+    ],
+    "description": "Demonstrates how to access, interpret, and visualize Planet Analytics API Object Detection and Segmentation results, explaining their different formats and delivery via the WFS 3 compliant endpoint.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/analytics_api/user-guide/02_analytic_feeds_results.ipynb"
+  },
+  "02_fetching_feed_results.ipynb": {
+    "use_case": "Analytics Api",
+    "planet_product": "",
+    "apis_used": [
+      "Analytics API"
+    ],
+    "description": "Shows how to paginate through Planet Analytic Feed Results for an existing analytics Subscription to construct a combined GeoJSON feature collection that can be imported into geospatial analysis tools.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/analytics_api/quickstart/02_fetching_feed_results.ipynb"
+  },
+  "03_change_detection.ipynb": {
+    "use_case": "Analytics Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Basemaps API",
+      "Analytics API",
+      "Tasking API",
+      "Tiles API"
+    ],
+    "description": "Explains how to access, interpret, and visualize Road & Building Construction change detections using Planet Analytics API Feeds and Subscriptions.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/analytics_api/user-guide/03_change_detection.ipynb"
+  },
+  "03_visualizing_raster_results.ipynb": {
+    "use_case": "Analytics Api",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Analytics API"
+    ],
+    "description": "Demonstrates how to download and visualize raster results obtained from a Planet Analytics API subscription using Python libraries such as rasterio and ipyleaflet.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/analytics_api/quickstart/03_visualizing_raster_results.ipynb"
+  },
+  "0_download_data.ipynb": {
+    "use_case": "Coastal Erosion Example",
+    "planet_product": "",
+    "apis_used": [],
+    "description": "Demonstrates an example workflow for analyzing coastal erosion using satellite imagery and associated geospatial data.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/coastal_erosion_example/0_download_data.ipynb"
+  },
+  "1_ard_intro_and_best_practices.ipynb": {
+    "use_case": "Analysis Ready Data",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Shows best practices for creating Analysis Ready Data using Planet's Data and Orders APIs, covering search criteria like product item types and defining areas of interest with GeoJSON.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/analysis_ready_data/1_ard_intro_and_best_practices.ipynb"
+  },
+  "1_basic_evalscripts.ipynb": {
+    "use_case": "Introduction To Evalscripts",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Statistical API",
+      "Processing API",
+      "Tiles API"
+    ],
+    "description": "Walks through the basics of Sentinel Hub evalscripts, teaching users to write scripts for cloud-based, per-pixel processing and visualization of remote sensing data using `setup()` and `evaluatePixel()` functions.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/introduction_to_evalscripts/1_basic_evalscripts.ipynb"
+  },
+  "1_datasets_identify.ipynb": {
+    "use_case": "Crop Segmentation",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Outlines the methodology for identifying, acquiring, and preparing ground truth agricultural land use data (specifically the 2015 Sacramento County DWR dataset) and PlanetScope satellite imagery to define training and testing areas for crop segmentation and classification.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/crop_segmentation/1_datasets_identify.ipynb"
+  },
+  "1_datasets_prepare_cdl.ipynb": {
+    "use_case": "Crop Classification",
+    "planet_product": "",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Walks through the steps of downloading, projecting, cropping, and resampling USDA 2016 Crop Data Layer (CDL) for Iowa to create a pre-processed dataset compatible with Planet PSOrthoTile imagery for crop classification.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/crop_classification/1_datasets_prepare_cdl.ipynb"
+  },
+  "1_drc_roads_download.ipynb": {
+    "use_case": "Forest Monitoring",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Demonstrates how to use the Planet Python client to search for and filter significantly overlapping PSScene images, then mosaic and clip them to a defined Area of Interest (AOI) during download using the Orders Toolchain.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/forest_monitoring/1_drc_roads_download.ipynb"
+  },
+  "1_introduction_to_cogs.ipynb": {
+    "use_case": "Cloud Native Geospatial",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Describes the fundamental structure of TIFF files, differentiating them from GeoTIFFs through the inclusion of geospatial metadata for spatial referencing.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/cloud_native_geospatial/intro_to_cogs/1_introduction_to_cogs.ipynb"
+  },
+  "1_introduction_to_stac.ipynb": {
+    "use_case": "Cloud Native Geospatial",
+    "planet_product": "",
+    "apis_used": [
+      "Orders API"
+    ],
+    "description": "Explains the Spatial Temporal Asset Catalog (STAC) specification, detailing its JSON-based structure as a unified language for searchable geospatial data and its core components including items, catalogs, collections, and the STAC API.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/cloud_native_geospatial/intro_to_stac/1_introduction_to_stac.ipynb"
+  },
+  "1_rasterio_firstlook.ipynb": {
+    "use_case": "Coastal Erosion Example",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates reading satellite imagery from GeoTIFF files using the `rasterio` Python library, with a specific example of Hurricane Harvey flood data for Houston.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/coastal_erosion_example/1_rasterio_firstlook.ipynb"
+  },
+  "1_visualising_time_series_with_statistical_api.ipynb": {
+    "use_case": "Statistical Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Walks through the process of quantitatively analyzing satellite imagery time series by using the Statistical API in the Planet Insights Platform to retrieve aggregated statistical values.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/statistical_api/1_visualising_time_series_with_statistical_api.ipynb"
+  },
+  "2_advanced_statistical_visualisations_with_statistical_api.ipynb": {
+    "use_case": "Statistical Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Illustrates how to leverage the Sentinel Hub Statistical API within the Planet Insights Platform to extract, process, and prepare satellite imagery statistics for advanced quantitative analysis and visualization using Python.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/statistical_api/2_advanced_statistical_visualisations_with_statistical_api.ipynb"
+  },
+  "2_ard_use_case_1.ipynb": {
+    "use_case": "Analysis Ready Data",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Demonstrates how to programmatically order Planet imagery and apply techniques like NDVI calculation, UDM2 filtering, and scene compositing to create Analysis Ready Data suitable for time-series algorithms.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/analysis_ready_data/2_ard_use_case_1.ipynb"
+  },
+  "2_classify_cart.ipynb": {
+    "use_case": "Crop Classification",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Demonstrates performing corn and soybean crop type classification using PlanetScope 4-band Orthotiles and NDVI features, employing a CART decision tree, with steps for UDM processing, feature engineering, model training, and quantitative validation.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/crop_classification/2_classify_cart.ipynb"
+  },
+  "2_datasets_prepare.ipynb": {
+    "use_case": "Crop Segmentation",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Orders API"
+    ],
+    "description": "Demonstrates the acquisition of Planet imagery and subsequent cropping of both the imagery and corresponding ground truth data to a defined Area of Interest for crop segmentation.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/crop_segmentation/2_datasets_prepare.ipynb"
+  },
+  "2_drc_roads_classification.ipynb": {
+    "use_case": "Forest Monitoring",
+    "planet_product": "",
+    "apis_used": [],
+    "description": "Demonstrates the classification of satellite image pixels into forest and non-forest categories using texture analysis, k-means clustering, and random forest models.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/forest_monitoring/2_drc_roads_classification.ipynb"
+  },
+  "2_introduction_to_cogs.ipynb": {
+    "use_case": "Cloud Native Geospatial",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Shows the process of querying Planet's Data API for PSScene4Band items, submitting an order via the Orders API, downloading the resulting non-Cloud Optimized GeoTIFFs, and converting them into Cloud Optimized GeoTIFFs using `rio-cogeo`.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/cloud_native_geospatial/intro_to_cogs/2_introduction_to_cogs.ipynb"
+  },
+  "2_multi_temporal_evalscripts.ipynb": {
+    "use_case": "Introduction To Evalscripts",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates how to implement multi-temporal analysis techniques like cloud-free mosaics, maximum NDVI composites, and temporal change detection directly within Sentinel Hub evalscripts by configuring mosaicking options.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/introduction_to_evalscripts/2_multi_temporal_evalscripts.ipynb"
+  },
+  "2_rasterbands.ipynb": {
+    "use_case": "Coastal Erosion Example",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates the initial setup for working with raster bands using `rasterio`, including environment preparation and loading a multi-band TIFF dataset.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/coastal_erosion_example/2_rasterbands.ipynb"
+  },
+  "3_ard_use_case_1_visualize_images.ipynb": {
+    "use_case": "Analysis Ready Data",
+    "planet_product": "",
+    "apis_used": [],
+    "description": "Demonstrates the visualization of Analysis Ready Data (ARD) NDVI composite images, applying a colormap and masking unusable pixels with UDM2s, and implementing memory-saving techniques like data type conversion and downsampling.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/analysis_ready_data/3_ard_use_case_1_visualize_images.ipynb"
+  },
+  "3_classify_cart_l8_ps.ipynb": {
+    "use_case": "Crop Classification",
+    "planet_product": "Landsat",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Demonstrates combining features from Landsat 8 and PlanetScope Orthotile data, including resampling and QA band masking, to train and evaluate a Classification and Regression Tree (CART) classifier for crop type classification.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/crop_classification/3_classify_cart_l8_ps.ipynb"
+  },
+  "3_compute_NDWI.ipynb": {
+    "use_case": "Coastal Erosion Example",
+    "planet_product": "",
+    "apis_used": [],
+    "description": "Demonstrates the computation of NDWI and subsequent pixel classification on satellite imagery to identify water bodies for coastal erosion analysis.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/coastal_erosion_example/3_compute_NDWI.ipynb"
+  },
+  "3_drc_roads_temporal_analysis.ipynb": {
+    "use_case": "Forest Monitoring",
+    "planet_product": "Basemaps",
+    "apis_used": [],
+    "description": "Demonstrates downloading and classifying a temporal stack of satellite imagery into forest/non-forest, then identifying change within the stack using random forest classification.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/forest_monitoring/3_drc_roads_temporal_analysis.ipynb"
+  },
+  "3_introduction_to_cogs.ipynb": {
+    "use_case": "Cloud Native Geospatial",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates how to upload Cloud Optimized GeoTIFFs (COGs) to Google Cloud Storage, configure a bucket for public access, and make COG objects publicly readable for streaming.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/cloud_native_geospatial/intro_to_cogs/3_introduction_to_cogs.ipynb"
+  },
+  "3_segment_knn.ipynb": {
+    "use_case": "Crop Segmentation",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Walks through training a K-Nearest Neighbors (KNN) classifier on Planet image reflectance data to distinguish crop from non-crop pixels, then segments the classified image to produce georeferenced GeoJSON crop polygons.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/crop_segmentation/3_segment_knn.ipynb"
+  },
+  "4_drc_roads_udm2.ipynb": {
+    "use_case": "Forest Monitoring",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Assesses the impact of Usable Data Mask (UDM2) on forest/non-forest classification using PSOrthoTile imagery in the Democratic Republic of Congo, concluding that UDM2 does not adequately filter haze in the tested imagery sets.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/forest_monitoring/4_drc_roads_udm2.ipynb"
+  },
+  "4_masks_and_filters.ipynb": {
+    "use_case": "Coastal Erosion Example",
+    "planet_product": "",
+    "apis_used": [],
+    "description": "Demonstrates calculating the Normalized Difference Water Index (NDWI) from multispectral satellite imagery using `rasterio` and `numpy` to generate masks and apply filters for geospatial feature extraction.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/coastal_erosion_example/4_masks_and_filters.ipynb"
+  },
+  "4_segment_knn_tuning.ipynb": {
+    "use_case": "Crop Segmentation",
+    "planet_product": "",
+    "apis_used": [],
+    "description": "Walks through tuning the `n_neighbors` parameter of a `KNeighborsClassifier` for crop segmentation using `GridSearchCV` and cross-validation to select the optimal `k` by evaluating accuracy and runtime trade-offs.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/crop_segmentation/4_segment_knn_tuning.ipynb"
+  },
+  "5_drc_roads_mosaic.ipynb": {
+    "use_case": "Forest Monitoring",
+    "planet_product": "Basemaps",
+    "apis_used": [],
+    "description": "Demonstrates forest change detection, specifically identifying new road creation, by leveraging Planet mosaics via the GDAL PLMosaic driver.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/forest_monitoring/5_drc_roads_mosaic.ipynb"
+  },
+  "5_plotting_a_histogram.ipynb": {
+    "use_case": "Coastal Erosion Example",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates how to load a multi-band PlanetScope satellite image using rasterio and extract individual spectral bands for subsequent analysis, such as plotting histograms.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/coastal_erosion_example/5_plotting_a_histogram.ipynb"
+  },
+  "CB_phenometrics.ipynb": {
+    "use_case": "Crop Phenometrics",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API"
+    ],
+    "description": "Demonstrates the calculation of comprehensive crop phenometrics, integrating vegetation metrics and climatic factors derived from Sentinel-1/2 biomass, land surface temperature, and soil water content data for agricultural management and yield optimization.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/crop_phenometrics/CB_phenometrics.ipynb"
+  },
+  "Crop_Biomass_Example.ipynb": {
+    "use_case": "Subscriptions Api",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API"
+    ],
+    "description": "Demonstrates how to subscribe to, retrieve, process, visualize, and deliver Crop Biomass Planetary Variable data using the Planet Subscriptions API and Python SDK to cloud storage or Sentinel Hub collections.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/subscriptions_api/crop_biomass/Crop_Biomass_Example.ipynb"
+  },
+  "Crop_Biomass_Example_Multiple_Fields.ipynb": {
+    "use_case": "Subscriptions Api",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API"
+    ],
+    "description": "Provides a workflow to subscribe to and retrieve Crop Biomass Planetary Variable data for multiple fields using the Planet Subscriptions API and a GeoJSON input.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/subscriptions_api/crop_biomass/Crop_Biomass_Example_Multiple_Fields.ipynb"
+  },
+  "LST-climate-anomaly-mapping.ipynb": {
+    "use_case": "Land Surface Temperature",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API",
+      "Processing API"
+    ],
+    "description": "Demonstrates how to map urban heatwave impact by calculating Land Surface Temperature anomalies from Planet's LST 100m product using the Sentinel Hub Processing API.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/land_surface_temperature/LST-climate-anomaly-mapping.ipynb"
+  },
+  "LST-climate-anomaly-time-series.ipynb": {
+    "use_case": "Land Surface Temperature",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API",
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates quantifying city heatwaves by retrieving and analyzing Land Surface Temperature anomalies via the Sentinel Hub Processing API.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/land_surface_temperature/LST-climate-anomaly-time-series.ipynb"
+  },
+  "SDK_order_basemaps.ipynb": {
+    "use_case": "Orders Api",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Orders API",
+      "Basemaps API"
+    ],
+    "description": "Demonstrates how to order a Planet Basemap using the Orders API and Python SDK, specifying orders via Area of Interest (AOI) and Quad ID for delivery to Google Cloud Storage.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/orders_api/orders_basemaps/SDK_order_basemaps.ipynb"
+  },
+  "agriculture_index_time_series.ipynb": {
+    "use_case": "Agriculture Index Time Series",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates how to generate agricultural index time series from satellite data via Statistical API requests, then process, analyze, and cluster the resulting time series using Python libraries like pandas, Matplotlib, and tslearn.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/agriculture_index_time_series/agriculture_index_time_series.ipynb"
+  },
+  "arps_metadata_lookup.ipynb": {
+    "use_case": "Byoc Metadata",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Subscriptions API",
+      "Statistical API",
+      "Processing API",
+      "BYOC API"
+    ],
+    "description": "Explains how to leverage the Statistical and BYOC APIs to extract ARPS QA header information and `scene_mask` values, enabling pixel-level traceability to original PlanetScope scenes and their collection times.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/byoc_metadata/arps_metadata_lookup.ipynb"
+  },
+  "bare_soil_detector.ipynb": {
+    "use_case": "Bare Soil Detector",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates the process of identifying bare soil periods in agricultural fields using spectral index calculations (MSAVI, BSI, NDTI, TI, NDBI), time-series analysis of bare soil probability, and visualization. Core MSAVI formula and threshold-based period detection are applicable to any multispectral imagery including PlanetScope.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/bare_soil_detector/bare_soil_detector.ipynb"
+  },
+  "basemaps_api_introduction.ipynb": {
+    "use_case": "Basemaps Api",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Data API",
+      "Basemaps API"
+    ],
+    "description": "Constructs a Python client for the Planet Basemaps API, demonstrating setup for authentication, automatic retries, and handling paginated mosaic listings.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/basemaps_api/basemaps_api_introduction.ipynb"
+  },
+  "basemaps_contributing_scene_metadata.ipynb": {
+    "use_case": "Basemaps Api",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Data API",
+      "Basemaps API",
+      "Tiles API"
+    ],
+    "description": "Demonstrates retrieving contributing scene metadata in GeoJSON format for a specified region within a Planet Basemap using the Basemaps and Data APIs.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/basemaps_api/basemaps_contributing_scene_metadata.ipynb"
+  },
+  "batch_processing_quickstart.ipynb": {
+    "use_case": "Batch Processing Api",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Processing API"
+    ],
+    "description": "Demonstrates the prerequisites and authentication workflow for interacting with the Sentinel Hub BatchV2 API, including integration with AWS S3 for data operations.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/batch_processing_api/batch_processing_quickstart.ipynb"
+  },
+  "calculate_coverage.ipynb": {
+    "use_case": "Coverage",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Calculates the expected imagery coverage of a user-defined Area of Interest (AOI) for a given Planet API search query, utilizing UTM projections and geospatial analysis before image download.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/coverage/calculate_coverage.ipynb"
+  },
+  "calculate_coverage_wgs84.ipynb": {
+    "use_case": "Coverage",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Illustrates how to calculate and visualize the data coverage of Planet `PSScene` imagery for a specified Area of Interest, date range, and cloud cover using the Planet API and `rasterio`.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/coverage/calculate_coverage_wgs84.ipynb"
+  },
+  "calculate_water_extent_analysis_ready_planetscope.ipynb": {
+    "use_case": "Calculate Water Extent Analysis Ready Planetscope",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates how to calculate water extent over time from Analysis-Ready PlanetScope (ARPS) data within the Planet Insights Platform by visualizing imagery with the Processing API, creating a time series with the Statistical API, and applying water classification thresholds.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/calculate_water_extent_analysis_ready_planetscope/calculate_water_extent_analysis_ready_planetscope.ipynb"
+  },
+  "calculating_growing_degree_days.ipynb": {
+    "use_case": "Growing Degree Days",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Subscriptions API",
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates how to calculate Growing Degree Days (GDD) from Planet Land Surface Temperature data using the Sentinel Hub Statistical API for a defined field of interest.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/growing_degree_days/calculating_growing_degree_days.ipynb"
+  },
+  "case_study_syria_idp_camps.ipynb": {
+    "use_case": "Analytics Api",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Analytics API",
+      "Tiles API"
+    ],
+    "description": "Illustrates using the Planet Analytics API to quantify and visualize changes in building and road infrastructure within Syrian Internally Displaced Persons (IDP) camps, in the context of flood events.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/analytics_api/case_study_syria_idp_camps.ipynb"
+  },
+  "change_detection_heatmap.ipynb": {
+    "use_case": "Analytics Api",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Analytics API"
+    ],
+    "description": "Walks through generating a geospatial heatmap using building change detection vector results fetched from the Planet Analytics API to visualize areas with the most detected changes.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/analytics_api/change_detection_heatmap.ipynb"
+  },
+  "coastline_analysis.ipynb": {
+    "use_case": "Coastal Erosion Example",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates a temporal analysis of coastline recession in Bangladesh by computing the Normalized Difference Water Index (NDWI) from multi-band satellite imagery and applying classical image processing and computer vision techniques for land-water classification and erosion assessment.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/coastal_erosion_example/coastline_analysis.ipynb"
+  },
+  "convert-radiance-to-reflectance-key.ipynb": {
+    "use_case": "Convert Radiance To Reflectance",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Walks through the process of converting PlanetScope analytic imagery from radiance units to Top of Atmosphere Reflectance using Python with Planet-provided coefficients.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/convert_radiance_to_reflectance/convert-radiance-to-reflectance-key.ipynb"
+  },
+  "convert-radiance-to-reflectance.ipynb": {
+    "use_case": "Convert Radiance To Reflectance",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates how to perform a basic Radiance to Reflectance calculation on PlanetScope imagery using Python and provided scaling coefficients.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/convert_radiance_to_reflectance/convert-radiance-to-reflectance.ipynb"
+  },
+  "gee_integration_orders.ipynb": {
+    "use_case": "Google Earth Engine Integration",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Orders API"
+    ],
+    "description": "Demonstrates how to programmatically order Planet imagery using the Orders API and the Planet Python SDK, configuring direct delivery of the ordered data to a specified Google Earth Engine project and ImageCollection.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/google_earth_engine_integration/gee_integration_orders.ipynb"
+  },
+  "gee_integration_subscriptions.ipynb": {
+    "use_case": "Google Earth Engine Integration",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Subscriptions API"
+    ],
+    "description": "Shows how to use Planet's Subscriptions API and Python SDK to create a subscription that delivers satellite imagery data directly to a specified Google Earth Engine ImageCollection.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/google_earth_engine_integration/gee_integration_subscriptions.ipynb"
+  },
+  "generate_ndvi_exercise.ipynb": {
+    "use_case": "Band Math Generate Ndvi",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Teaches how to perform an NDVI calculation on 4-band PlanetScope Surface Reflectance data by extracting red and near-infrared bands in Python, then generating a colorized NDVI image and histogram.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/band_math_generate_ndvi/generate_ndvi_exercise.ipynb"
+  },
+  "generate_ndvi_exercise_key.ipynb": {
+    "use_case": "Band Math Generate Ndvi",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates how to download PlanetScope 4-band Surface Reflectance data, calculate the Normalized Difference Vegetation Index (NDVI) using Python, and visualize the colorized NDVI image along with its histogram.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/band_math_generate_ndvi/generate_ndvi_exercise_key.ipynb"
+  },
+  "inspecting_satellite_imagery.ipynb": {
+    "use_case": "Getting To Know Satellite Imagery",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates how to programmatically extract a satellite image's geospatial metadata, such as its bounds, dimensions, pixel resolution, coordinate reference system (CRS), and affine transformation using Python's Rasterio library.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/getting_to_know_satellite_imagery/inspecting_satellite_imagery.ipynb"
+  },
+  "introduction_to_analysis_apis.ipynb": {
+    "use_case": "Introduction To Analysis Apis",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Statistical API",
+      "Batch Processing API",
+      "Processing API"
+    ],
+    "description": "Demonstrates how to access and analyze satellite imagery from Sentinel-2, Planetscope, and Planet Fusion using the Sentinel Hub Python client library's Catalog, Process, and Statistical APIs for tasks like discovery, visualization (including NDVI), and time-series analysis.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/introduction_to_analysis_apis/introduction_to_analysis_apis.ipynb"
+  },
+  "land_surface_temperature_subscription.ipynb": {
+    "use_case": "Subscriptions Api",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API"
+    ],
+    "description": "Walks through the workflow of using the Planet Subscriptions API to retrieve 100m Land Surface Temperature data and perform temporal and spatial analysis.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/subscriptions_api/land_surface_temperature_subscription.ipynb"
+  },
+  "landsat_ps_comparison.ipynb": {
+    "use_case": "Landsat Planetscope Comparison",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Demonstrates downloading, visualizing, and resampling Landsat8 data to align with PlanetScope scenes, then performing a pixel-by-pixel comparison of their near-infrared bands to analyze differences attributed to sensor resolution and spectral response for improved crop type differentiation.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/landsat_planetscope_comparison/landsat_ps_comparison.ipynb"
+  },
+  "large_area_utilities.ipynb": {
+    "use_case": "Large Area Utilities",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Statistical API",
+      "Batch Processing API",
+      "Processing API"
+    ],
+    "description": "Illustrates how to partition extensive geographical areas into discrete, processable bounding boxes using `sentinelhub`'s multiple grid and tile-based splitting utilities.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/large_area_utilities/large_area_utilities.ipynb"
+  },
+  "mapping_basemap_tiles_bokeh.ipynb": {
+    "use_case": "Tile Services",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Basemaps API",
+      "Tiles API"
+    ],
+    "description": "Demonstrates rendering Planet Mosaics from XYZ Tile Services as interactive map plots using Bokeh, including multiple maps arranged in a grid with options for linked interaction.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/tile_services/mapping_basemap_tiles_bokeh.ipynb"
+  },
+  "mapping_basemap_tiles_leaflet.ipynb": {
+    "use_case": "Tile Services",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Basemaps API",
+      "Tiles API"
+    ],
+    "description": "Demonstrates how to render Planet Mosaics via Basemap Tile Services using ipyleaflet to build an interactive map with togglable layers.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/tile_services/mapping_basemap_tiles_leaflet.ipynb"
+  },
+  "mosaicking_and_masking.ipynb": {
+    "use_case": "Mosaicking And Masking",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates how to create a composite image, or mosaic, from multiple PlanetScope satellite scenes covering an area of interest using the `rasterio` and `fiona` libraries.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/mosaicking_and_masking/mosaicking_and_masking.ipynb"
+  },
+  "mosaicking_and_masking_key.ipynb": {
+    "use_case": "Mosaicking And Masking",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates how to mosaic multiple PlanetScope satellite images into a composite for an Area of Interest, using `rasterio` and `fiona` after initial imagery acquisition and inspection.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/mosaicking_and_masking/mosaicking_and_masking_key.ipynb"
+  },
+  "ndvi_planetscope.ipynb": {
+    "use_case": "Band Math Generate Ndvi",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Demonstrates how to calculate the Normalized Difference Vegetation Index (NDVI) from PlanetScope 4-band imagery by downloading the data, extracting red and near-infrared bands, and performing the NDVI calculation using Python.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/band_math_generate_ndvi/ndvi/ndvi_planetscope.ipynb"
+  },
+  "ndvi_planetscope_sr.ipynb": {
+    "use_case": "Band Math Generate Ndvi",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Demonstrates calculating and visualizing the Normalized Difference Vegetation Index (NDVI) from PlanetScope Surface Reflectance (SR) data using Python.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/band_math_generate_ndvi/ndvi_from_sr/ndvi_planetscope_sr.ipynb"
+  },
+  "ordering_and_delivery.ipynb": {
+    "use_case": "Orders Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Demonstrates how to authenticate, create, poll, and download `PSScene` imagery using the Orders API, including individual and zipped deliveries.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/orders_api/ordering_and_delivery.ipynb"
+  },
+  "ordering_to_data_collection.ipynb": {
+    "use_case": "Orders Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Orders API"
+    ],
+    "description": "Demonstrates how to use the Planet Orders API with the `hosting` block to create orders for SkySatCollect imagery, deliver the data to a Sentinel Hub data collection, and reuse an existing collection ID for subsequent orders.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/orders_api/ordering_to_data_collection.ipynb"
+  },
+  "park_fire.ipynb": {
+    "use_case": "Burned Area Delineation",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Basemaps API",
+      "Tiles API"
+    ],
+    "description": "Demonstrates delineating burned areas by computing and visualizing pre- and post-fire differences in Normalized Difference Vegetation Index (NDVI) and Burned Area Index (BAI) derived from streaming PlanetScope Mosaics.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/burned_area_delineation/park_fire.ipynb"
+  },
+  "planet_data_api_introduction.ipynb": {
+    "use_case": "Data Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Illustrates how to use Python to authenticate, perform complex searches, retrieve statistics, activate, and download satellite imagery assets from the Planet Data API.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/data_api/planet_data_api_introduction.ipynb"
+  },
+  "planet_features_api.ipynb": {
+    "use_case": "Features Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API",
+      "Subscriptions API",
+      "Features API"
+    ],
+    "description": "Shows how to create and use Planet Features API FeatureCollections and Features with Python to define Area of Interest (AOI) references for integration with other Planet APIs, including Data, Orders, and Subscriptions.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/features_api/planet_features_api.ipynb"
+  },
+  "planet_python_client_introduction.ipynb": {
+    "use_case": "Data Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Introduces the Planet Data API Python client, demonstrating authentication and the core workflow for searching, activating, and downloading satellite imagery with spatial and temporal filtering.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/data_api/planet_python_client_introduction.ipynb"
+  },
+  "planet_sdk_destinations_demo.ipynb": {
+    "use_case": "Destinations Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Destinations API"
+    ],
+    "description": "Demonstrates how to use the Planet Python client to manage and securely store cloud storage bucket credentials as reusable Destinations for Planet product deliveries via Orders and Subscriptions.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/destinations_api/planet_sdk_destinations_demo.ipynb"
+  },
+  "planet_sdk_features_demo.ipynb": {
+    "use_case": "Features Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API",
+      "Features API"
+    ],
+    "description": "Walks through the process of creating and adding OGC-compliant GeoJson features to collections using the Planet Features API and its official Python client.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/features_api/planet_sdk_features_demo.ipynb"
+  },
+  "planet_sdk_orders_demo.ipynb": {
+    "use_case": "Orders Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Orders API"
+    ],
+    "description": "Walks through authenticating with Planet's platform and constructing a spatial data order request, including products and processing tools, using the official Planet Python SDK.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/orders_api/planet_sdk_orders_demo.ipynb"
+  },
+  "planet_tasking_api_bulk_orders.ipynb": {
+    "use_case": "Tasking Api",
+    "planet_product": "",
+    "apis_used": [
+      "Tasking API"
+    ],
+    "description": "Demonstrates how to programmatically create and track the progress of bulk tasking orders using the Planet Tasking API with Python.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/tasking_api/planet_tasking_api_bulk_orders.ipynb"
+  },
+  "planet_tasking_api_monitoring_orders.ipynb": {
+    "use_case": "Tasking Api",
+    "planet_product": "",
+    "apis_used": [
+      "Tasking API"
+    ],
+    "description": "Walks through creating and checking the status of monitoring tasking orders via the Planet Tasking API using Python and API key authentication.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/tasking_api/planet_tasking_api_monitoring_orders.ipynb"
+  },
+  "planet_tasking_api_order_creation.ipynb": {
+    "use_case": "Tasking Api",
+    "planet_product": "SkySat",
+    "apis_used": [
+      "Data API",
+      "Tasking API"
+    ],
+    "description": "Teaches how to programmatically create tasking orders via the Planet Tasking API using Python, including authentication setup and order request submission.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/tasking_api/planet_tasking_api_order_creation.ipynb"
+  },
+  "planet_tasking_api_order_edit_and_cancel.ipynb": {
+    "use_case": "Tasking Api",
+    "planet_product": "",
+    "apis_used": [
+      "Tasking API"
+    ],
+    "description": "Demonstrates how to edit and cancel Planet Tasking API orders using Python code samples and the `/order` API endpoint.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/tasking_api/planet_tasking_api_order_edit_and_cancel.ipynb"
+  },
+  "planetscope_landsat8_crossovers.ipynb": {
+    "use_case": "Crossovers",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Illustrates the programmatic identification of spatially and temporally co-located PSScene and Landsat 8 images, defined as those acquired within a one-hour window, using filtered Planet API queries.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/crossovers/planetscope_landsat8_crossovers.ipynb"
+  },
+  "publish_to_arcgis_online.ipynb": {
+    "use_case": "Publish To Arcgis Online",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Orders API"
+    ],
+    "description": "Demonstrates publishing PlanetScope 8-band analytics surface reflectance imagery as image services to ArcGIS Online using the Planet API and ArcGIS API for Python.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/publish_to_arcgis_online/publish_to_arcgis_online.ipynb"
+  },
+  "pv-forest-change.ipynb": {
+    "use_case": "Forest Carbon Dilligence",
+    "planet_product": "Sentinel-2",
+    "apis_used": [
+      "Subscriptions API",
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates how to map changes in forest cover between two dates using Planet's Forest Carbon Diligence product and the Processing API, categorizing results into forest gain, loss, and stable classes based on defined height and canopy cover thresholds.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/forest_carbon_dilligence/pv-forest-change.ipynb"
+  },
+  "pv-polygon-level-timeseries.ipynb": {
+    "use_case": "Forest Carbon Dilligence",
+    "planet_product": "Sentinel-2",
+    "apis_used": [
+      "Subscriptions API",
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Shows how to leverage Sentinel Hub's Statistical and Processing APIs to extract polygon-level time series statistics, including forest-masked metrics, from the Forest Carbon Diligence product.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/forest_carbon_dilligence/pv-polygon-level-timeseries.ipynb"
+  },
+  "quota_reservation_api_introduction.ipynb": {
+    "use_case": "Quota Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Subscriptions API",
+      "Features API"
+    ],
+    "description": "Demonstrates the basic use and functionality of Planet's Quota Reservations API to create, estimate, and view existing quota reservations for subscribed products.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/quota_api/quota_reservation_api_introduction.ipynb"
+  },
+  "quota_subscription_with_features.ipynb": {
+    "use_case": "Quota Api",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API",
+      "Features API"
+    ],
+    "description": "Demonstrates a Python workflow combining the Planet SDK and `requests` to upload Features, provision quota for them, and create a data subscription based on the reserved quota.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/quota_api/quota_subscription_with_features.ipynb"
+  },
+  "raster_to_vector_building_footprints.ipynb": {
+    "use_case": "Analytics Snippets",
+    "planet_product": "Basemaps",
+    "apis_used": [
+      "Data API",
+      "Orders API",
+      "Analytics API"
+    ],
+    "description": "Demonstrates the process of converting building footprint rasters, obtained from the Planet Analytics Feed, into vector datasets using GDAL CLI and various Rasterio techniques including simplification.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/analytics_snippets/raster_to_vector_building_footprints.ipynb"
+  },
+  "raster_to_vector_roads.ipynb": {
+    "use_case": "Analytics Snippets",
+    "planet_product": "",
+    "apis_used": [
+      "Data API",
+      "Orders API",
+      "Analytics API"
+    ],
+    "description": "Demonstrates the conversion of road footprint rasters, sourced from the Planet Analytics Feed, into vector features using GDAL CLI and Rasterio with options for simplification and filtering.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/analytics_snippets/raster_to_vector_roads.ipynb"
+  },
+  "requests_order_basemaps.ipynb": {
+    "use_case": "Orders Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Orders API",
+      "Basemaps API"
+    ],
+    "description": "Demonstrates how to order PlanetScope Mosaics using the Planet Orders API with Python Requests, specifying an Area of Interest or Quad ID for delivery to a Google Cloud Storage bucket.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/orders_api/orders_basemaps/requests_order_basemaps.ipynb"
+  },
+  "search_and_download_quickstart.ipynb": {
+    "use_case": "Data Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Walks through using the Data API in Python to define a GeoJSON Area of Interest, apply search filters to find imagery, and download selected assets.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/data_api/search_and_download_quickstart.ipynb"
+  },
+  "search_and_preview_quickstart.ipynb": {
+    "use_case": "Data Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Tiles API"
+    ],
+    "description": "Demonstrates how to leverage Planet\u2019s Data API and imagery preview tiles to visualize filtered search results and a defined Area of Interest on an interactive map.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/data_api/search_and_preview_quickstart.ipynb"
+  },
+  "search_windowed_read_and_clip_output.ipynb": {
+    "use_case": "Data Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Demonstrates how to leverage Cloud Optimized Geotiff windowed reads with the Data API to search, load, and visually display a sub-region of interest from a Planet asset, including contrast stretching and NDVI calculation.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/data_api/search_windowed_read_and_clip_output.ipynb"
+  },
+  "soil_water_content_data_collection_delivery.ipynb": {
+    "use_case": "Subscriptions Api",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Statistical API",
+      "Processing API",
+      "BYOC API"
+    ],
+    "description": "Demonstrates creating a Sentinel Hub BYOC collection, ingesting Planetary Variable Soil Water Content (SWC) data from S3, and then performing statistical analysis and visualization.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/subscriptions_api/soil_water_content_data_collection_delivery.ipynb"
+  },
+  "soil_water_content_gcp_delivery.ipynb": {
+    "use_case": "Subscriptions Api",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API"
+    ],
+    "description": "Demonstrates how to use the Planet Subscriptions API to deliver Soil Water Content Planetary Variables to Google Cloud Storage, perform time series analysis on the delivered data's metadata, and retrieve and plot specific raster data.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/subscriptions_api/soil_water_content_gcp_delivery.ipynb"
+  },
+  "streaming.ipynb": {
+    "use_case": "Basemaps Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Basemaps API",
+      "Tiles API"
+    ],
+    "description": "Teaches how to leverage the Basemaps API to stream analysis-ready mosaic data via WMTS directly into GIS or scripts, demonstrated with `gdal` and `rasterio`.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/basemaps_api/streaming.ipynb"
+  },
+  "subscriptions_api_quickstart.ipynb": {
+    "use_case": "Subscriptions Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API",
+      "Subscriptions API"
+    ],
+    "description": "Demonstrates authenticating and programmatically interacting with the Planet Subscriptions API using the Python SDK for continuous imagery and metadata delivery to cloud storage.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/subscriptions_api/subscriptions_api_quickstart.ipynb"
+  },
+  "subscriptions_to_data_collection.ipynb": {
+    "use_case": "Subscriptions Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Subscriptions API",
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates using the Subscriptions API hosting block to deliver PlanetScope imagery to a data collection, then analyzing the collected data to create NDVI time series and calculate multi-temporal median NDVI.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/subscriptions_api/subscriptions_to_data_collection.ipynb"
+  },
+  "tools_and_toolchains.ipynb": {
+    "use_case": "Orders Api",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Demonstrates using specific tools and toolchains such as clip, bandmath, toar, composite, and chained operations like clip -> bandmath and toar -> reproject -> tile when ordering via the Orders API.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/api_guides/orders_api/tools_and_toolchains.ipynb"
+  },
+  "udm.ipynb": {
+    "use_case": "Working With Usable Data Mask",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Demonstrates how to download, visualize, and convert the original bit-encoded Unusable Data Mask (UDM) to various binary masks for filtering pixels based on specific quality concerns.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/working_with_usable_data_mask/udm.ipynb"
+  },
+  "udm2.ipynb": {
+    "use_case": "Working With Usable Data Mask",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Demonstrates how to visualize Usable Data Mask (UDM2) bands and convert them into masks for unclear pixels, clouds, and cloud shadows.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/working_with_usable_data_mask/udm2.ipynb"
+  },
+  "udm2_clouds.ipynb": {
+    "use_case": "Working With Usable Data Mask",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API"
+    ],
+    "description": "Demonstrates how to leverage Usable Data Mask (UDM2) metadata and the `ortho_udm2` asset to filter Planet imagery by specific pixel classifications, such as cloud, haze, or clear, using the Planet Data API and client libraries.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/working_with_usable_data_mask/udm2_clouds.ipynb"
+  },
+  "udm2_clouds_aoi.ipynb": {
+    "use_case": "Working With Usable Data Mask",
+    "planet_product": "PlanetScope",
+    "apis_used": [
+      "Data API",
+      "Orders API"
+    ],
+    "description": "Explains how to use the Planet Python Client to search for PSScene imagery with specific Usable Data Mask (UDM2) cloud percentages within a given Area of Interest (AOI) and date range.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/working_with_usable_data_mask/udm2_clouds_aoi.ipynb"
+  },
+  "urban-heat-monitoring.ipynb": {
+    "use_case": "Land Surface Temperature",
+    "planet_product": "Planetary Variables",
+    "apis_used": [
+      "Subscriptions API",
+      "Statistical API",
+      "Processing API"
+    ],
+    "description": "Demonstrates how to identify heat wave periods and quantify Urban Heat Island intensity by analyzing Land Surface Temperature data from Planetary Variables using the Statistics API and a 'Tip and Cue' approach.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/land_surface_temperature/urban-heat-monitoring.ipynb"
+  },
+  "visualizing_satellite_imagery.ipynb": {
+    "use_case": "Getting To Know Satellite Imagery",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Shows how to plot individual blue, green, red, and NIR bands of a PlanetScope TIFF image, loaded as 2D arrays with Rasterio, using Matplotlib's `imshow` function, while adjusting colormaps and adding color bars.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/getting_to_know_satellite_imagery/visualizing_satellite_imagery.ipynb"
+  },
+  "yield-forecasting.ipynb": {
+    "use_case": "Yield Forecasting",
+    "planet_product": "PlanetScope",
+    "apis_used": [],
+    "description": "Demonstrates regional crop yield forecasting, specifically for hay in North Dakota, by leveraging Soil Water Content, Land Surface Temperature, and Vegetation Optical Depth Planetary Variables within a Python algorithm.",
+    "source_url": "https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/use_cases/yield_forecasting/yield-forecasting.ipynb"
+  }
+}
