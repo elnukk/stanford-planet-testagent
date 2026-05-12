@@ -122,65 +122,101 @@ with tab_run:
             st.subheader("Intake JSON sent to agent")
             st.json(intake)
 
-            from agent.planner import plan_workflow
-            from agent.coder import assemble_notebook
-
-            log_entries = []
-
-            def _make_log_cb(placeholder):
-                def log_cb(kind: str, stage: str, content: str = ""):
-                    log_entries.append((kind, stage, content))
-                    with placeholder.container():
-                        for k, s, c in log_entries:
-                            if k == "progress":
-                                st.caption(f"• {s}")
-                            elif k == "thinking":
-                                with st.expander(f"🧠 {s}", expanded=False):
-                                    preview = c[:4000] + ("\n\n*(truncated)*" if len(c) > 4000 else "")
-                                    st.markdown(preview)
-                return log_cb
+            import dspy
+            from dspy_agent import (
+                search_notebooks_tool, search_planet_docs_tool,
+                plan_workflow_tool, code_notebook_tool,
+                BiodiversityAgentSignature, _extract_notebook_cells,
+                DEFAULT_MODEL,
+            )
 
             try:
-                with st.status("Running planner + coder...", expanded=True) as run_status:
-                    log_placeholder = st.empty()
-                    log_cb = _make_log_cb(log_placeholder)
+                api_key = os.getenv("ANTHROPIC_API_KEY")
+                lm = dspy.LM(DEFAULT_MODEL, api_key=api_key)
+                dspy.configure(lm=lm)
 
-                    plan = plan_workflow(intake, log_cb=log_cb)
-                    cells = assemble_notebook(plan, log_cb=log_cb)
+                # Provide intake directly so the agent skips the interactive intake tool
+                _intake = intake
+                def run_intake_tool() -> dict:
+                    """Returns the pre-collected intake from the UI form."""
+                    return _intake
 
-                    run_status.update(
-                        label=f"Done — {len(cells)} cells: {plan.get('workflow_title', '')}",
-                        state="complete",
-                        expanded=False,
-                    )
+                agent = dspy.ReAct(
+                    BiodiversityAgentSignature,
+                    tools=[run_intake_tool, search_notebooks_tool, search_planet_docs_tool,
+                           plan_workflow_tool, code_notebook_tool],
+                )
+
+                user_request = (
+                    f"{intake['user_description']} "
+                    f"Region: {intake['region']['description']}. "
+                    f"Product: {intake['planet_product']}. "
+                    f"Use case: {intake['use_case']}."
+                )
+
+                with st.spinner("Running agent (this takes ~60–120 s)..."):
+                    result = agent(user_request=user_request)
+
+                trajectory = getattr(result, "trajectory", {}) or {}
+                cells = _extract_notebook_cells(trajectory) or []
+                workflow_title = intake.get("use_case", "Satellite Analysis Workflow")
 
                 save_to_history({
                     "timestamp": datetime.now().isoformat(timespec="seconds"),
                     "intake": intake,
-                    "workflow_title": plan.get("workflow_title", ""),
-                    "step_count": len(plan.get("steps", [])),
+                    "workflow_title": workflow_title,
+                    "step_count": 0,
                     "cell_count": len(cells),
                 })
 
-                st.success(f"Done — {len(cells)} cells generated for: **{plan.get('workflow_title', '')}**")
+                st.success(f"Done — {len(cells)} cells generated")
 
-                st.divider()
-                st.subheader("Output: Notebook Cells (copy-paste ready)")
+                # ── Trajectory ────────────────────────────────────────────────
+                if trajectory:
+                    st.divider()
+                    st.subheader("Agent Trajectory")
+                    step_idx = 0
+                    while f"tool_name_{step_idx}" in trajectory:
+                        thought = trajectory.get(f"thought_{step_idx}", "")
+                        tool_name = trajectory.get(f"tool_name_{step_idx}", "")
+                        tool_args = trajectory.get(f"tool_args_{step_idx}", {})
+                        observation = trajectory.get(f"observation_{step_idx}", "")
 
-                for i, cell in enumerate(cells):
-                    cell_type = cell.get("cell_type", "code")
-                    source = cell.get("source", "")
-                    if isinstance(source, list):
-                        source = "".join(source)
+                        label = f"Step {step_idx + 1}: {tool_name}"
+                        with st.expander(label, expanded=False):
+                            if thought:
+                                st.markdown("**Thought**")
+                                st.text(thought[:2000] + ("..." if len(thought) > 2000 else ""))
+                            st.markdown(f"**Tool:** `{tool_name}`")
+                            if tool_args:
+                                args_str = json.dumps(tool_args, indent=2) if not isinstance(tool_args, str) else tool_args
+                                st.markdown("**Args**")
+                                st.code(args_str[:800] + ("..." if len(args_str) > 800 else ""), language="json")
+                            if observation:
+                                obs_str = observation if isinstance(observation, str) else json.dumps(observation, indent=2)
+                                st.markdown("**Result**")
+                                st.text(obs_str[:600] + ("..." if len(obs_str) > 600 else ""))
+                        step_idx += 1
 
-                    label = f"Cell {i + 1} [{cell_type}]"
-                    with st.expander(label, expanded=(i < 3)):
-                        lang = "python" if cell_type == "code" else "markdown"
-                        st.code(source, language=lang)
+                # ── Notebook cells ────────────────────────────────────────────
+                if cells:
+                    st.divider()
+                    st.subheader("Output: Notebook Cells (copy-paste ready)")
 
-                st.divider()
-                st.subheader("Full cells JSON")
-                st.code(json.dumps(cells, indent=2), language="json")
+                    for i, cell in enumerate(cells):
+                        cell_type = cell.get("cell_type", "code")
+                        source = cell.get("source", "")
+                        if isinstance(source, list):
+                            source = "".join(source)
+
+                        label = f"Cell {i + 1} [{cell_type}]"
+                        with st.expander(label, expanded=(i < 3)):
+                            lang = "python" if cell_type == "code" else "markdown"
+                            st.code(source, language=lang)
+
+                    st.divider()
+                    st.subheader("Full cells JSON")
+                    st.code(json.dumps(cells, indent=2), language="json")
 
             except Exception as exc:
                 st.error(f"Agent error: {exc}")
