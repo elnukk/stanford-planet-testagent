@@ -70,33 +70,16 @@ def _parse_json(raw: str) -> dict:
         return json.loads(_sanitize_json_strings(raw))
 
 
-def _call_llm(prompt: str, max_retries: int = 5, model: str = MODEL,
-              log_cb=None, stage: str = "") -> str:
+def _call_llm(prompt: str, max_retries: int = 5, model: str = MODEL) -> str:
     delay = 30
-    use_thinking = (model == MODEL)
     for attempt in range(max_retries):
         try:
-            kwargs = dict(model=model, messages=[{"role": "user", "content": prompt}])
-            if use_thinking:
-                kwargs["max_tokens"] = 16000
-                kwargs["thinking"] = {"type": "enabled", "budget_tokens": 8000}
-            else:
-                kwargs["max_tokens"] = 4096
-
-            response = client.messages.create(**kwargs)
-
-            raw = ""
-            thinking_text = ""
-            for block in response.content:
-                if block.type == "thinking":
-                    thinking_text = block.thinking
-                elif block.type == "text":
-                    raw = block.text
-
-            if log_cb and thinking_text:
-                log_cb("thinking", stage, thinking_text)
-
-            raw = raw.strip()
+            response = client.messages.create(
+                model=model,
+                max_tokens=4096,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            raw = response.content[0].text.strip()
             raw = re.sub(r"^```(?:json)?", "", raw).strip()
             raw = re.sub(r"```$", "", raw).strip()
             return raw
@@ -148,7 +131,7 @@ def _band_context(product: str) -> str:
 
 # ─── Phase 1: Generate steps ──────────────────────────────────────────────────
 
-def generate_steps(intake: dict, discovery_cells: list, discovery_docs: dict, log_cb=None) -> dict:
+def generate_steps(intake: dict, discovery_cells: list, discovery_docs: dict) -> dict:
     """
     LLM generates workflow title + ordered steps grounded in what search actually found.
     No hardcoded skeleton — steps reflect real notebooks and docs.
@@ -204,7 +187,7 @@ Examples: authentication → both, index calculation → notebook_search, \
 API endpoint details → web_search.
 - Respond with valid JSON only — no markdown fences, no explanation."""
 
-    return _parse_json(_call_llm(prompt, log_cb=log_cb, stage="Generate Steps"))
+    return _parse_json(_call_llm(prompt))
 
 
 # ─── Phase 2: Per-step selection ──────────────────────────────────────────────
@@ -259,7 +242,7 @@ Prefer cells that use only the available bands listed above.
 
 # ─── Main pipeline ────────────────────────────────────────────────────────────
 
-def plan_workflow(intake: dict, log_cb=None) -> dict:
+def plan_workflow(intake: dict) -> dict:
     """
     Full planner pipeline:
       1. Discovery search (broad) to ground step generation
@@ -275,25 +258,19 @@ def plan_workflow(intake: dict, log_cb=None) -> dict:
         intake.get("inferred_intent", ""),
     ]))
     print(f"[planner] Discovery search: {discovery_query!r}")
-    if log_cb: log_cb("progress", f"Discovery search: {discovery_query!r}")
     discovery_cells = search_notebooks(discovery_query)
     discovery_docs = _safe_docs_search(discovery_query)
-    if log_cb: log_cb("progress", f"Found {len(discovery_cells)} notebook cells")
 
     # Phase 2: Generate steps
     print("[planner] Generating steps...")
-    if log_cb: log_cb("progress", "Generating workflow steps...")
-    result = generate_steps(intake, discovery_cells, discovery_docs, log_cb=log_cb)
+    result = generate_steps(intake, discovery_cells, discovery_docs)
     workflow_title = result.get("workflow_title", "Satellite Analysis Workflow")
     steps = result.get("steps", [])
     print(f"[planner] {len(steps)} steps generated")
-    if log_cb: log_cb("progress", f"{len(steps)} steps planned: {workflow_title}")
 
     # Phase 3 + 4: Per-step retrieval and selection — run all steps in parallel.
     # Each step is independent: notebook search + docs fetch + Haiku selection.
     product = intake.get("planet_product", "")
-
-    if log_cb: log_cb("progress", f"Retrieving material for {len(steps)} steps in parallel...")
 
     def _process_step(step: dict) -> dict:
         query = step.get("retrieval_query") or step.get("title", "")
@@ -333,7 +310,6 @@ def plan_workflow(intake: dict, log_cb=None) -> dict:
             result = future.result()
             enriched_by_id[result["step_id"]] = result
             print(f"[planner] Step {result['step_id']} done")
-            if log_cb: log_cb("progress", f"Step {result['step_id']} ready: {result.get('title', '')}")
 
     # Restore original step order
     enriched_steps = [enriched_by_id[step["step_id"]] for step in steps]
