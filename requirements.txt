@@ -3,3 +3,8 @@ dspy-ai
 anthropic
 google-genai
 python-dotenv
+bs4
+fastapi
+uvicorn
+requests
+markdownify
