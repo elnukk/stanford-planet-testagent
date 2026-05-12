@@ -83,9 +83,11 @@ def _call_llm(prompt: str, max_retries: int = 5, model: str = MODEL) -> str:
             raw = re.sub(r"^```(?:json)?", "", raw).strip()
             raw = re.sub(r"```$", "", raw).strip()
             return raw
-        except anthropic.RateLimitError as e:
+        except (anthropic.RateLimitError, anthropic.APIStatusError) as e:
+            if isinstance(e, anthropic.APIStatusError) and e.status_code != 529:
+                raise
             if attempt < max_retries - 1:
-                print(f"[planner] Rate limited, retrying in {delay}s... (attempt {attempt + 1}/{max_retries})")
+                print(f"[planner] API overloaded/rate-limited, retrying in {delay}s... (attempt {attempt + 1}/{max_retries})")
                 time.sleep(delay)
                 delay = min(delay * 2, 120)
             else:
